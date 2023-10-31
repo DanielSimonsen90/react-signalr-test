@@ -4,7 +4,7 @@ import * as signalR from "@microsoft/signalr";
 const URL = "https://localhost:5000/api/gameshub";
 
 class Connector {
-  private connection: signalR.HubConnection;
+  public connection: signalR.HubConnection;
   public listenForMessages: (callback: (message: string) => void) => void;
   private callbacks: ((message: string) => void)[] = [];
   static instance: Connector;

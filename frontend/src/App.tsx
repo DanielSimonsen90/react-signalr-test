@@ -3,8 +3,10 @@ import './App.css';
 import Connector from './signalr'
 ;
 function App() {
-  const { ping, registerPong } = Connector();
+  const { ping, registerPong, connection } = Connector();
   useEffect(() => {
+    console.log("connection", connection);
+    
     registerPong(() => alert("pong"));
   }, []);
   return (
